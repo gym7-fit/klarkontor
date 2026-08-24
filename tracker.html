@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klarkontor — Akquise-Tracker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --ink:#17233B;
+    --paper:#faf8f3;
+    --accent:#B8863A;
+    --accent-light:#f3ead9;
+    --muted:#6e6656;
+    --line:#dcd6c8;
+    --panel:#f1efe8;
+    --green:#3d6b4f;
+    --green-light:#e5efe8;
+    --red:#a34433;
+    --red-light:#f5e6e2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans',sans-serif;
+    background:var(--panel);
+    color:var(--ink);
+    padding-bottom:60px;
+  }
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:20px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-name{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:19px;
+  }
+  .brand-name span{ color:var(--accent); }
+  .brand-sub{ font-size:11.5px; color:var(--muted); font-style:italic; }
+  .stats{ display:flex; gap:18px; }
+  .stat{ text-align:center; }
+  .stat-num{ font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; }
+  .stat-label{ font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+
+  main{ max-width:1000px; margin:0 auto; padding:24px 16px; }
+
+  .toolbar{
+    display:flex;
+    gap:10px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .add-btn{
+    background:var(--ink);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:10px 18px;
+    font-weight:600;
+    font-size:13.5px;
+    cursor:pointer;
+  }
+  .add-btn:hover{ background:#000; }
+  .filter-chip{
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:20px;
+    padding:6px 14px;
+    font-size:12.5px;
+    cursor:pointer;
+    color:var(--muted);
+  }
+  .filter-chip.active{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+  }
+
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:10px;
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .card-name{ font-weight:700; font-size:15px; }
+  .card-contact{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .status-badge{
+    font-size:11px;
+    font-weight:600;
+    padding:4px 10px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+  .status-Neu{ background:var(--panel); color:var(--muted); }
+  .status-Angeschrieben{ background:var(--accent-light); color:var(--accent); }
+  .status-Antwort{ background:#e6eef5; color:#2b5a82; }
+  .status-Termin{ background:#eee5f5; color:#5c3a82; }
+  .status-Kunde{ background:var(--green-light); color:var(--green); }
+  .status-Abgesagt{ background:var(--red-light); color:var(--red); }
+
+  .card-notes{ font-size:12.5px; color:var(--ink); margin-top:8px; white-space:pre-wrap; }
+  .card-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+  }
+  .followup{ font-size:11.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; }
+  .followup.due{ color:var(--red); font-weight:600; }
+  .card-actions{ display:flex; gap:8px; }
+  .card-actions button{
+    border:none;
+    background:none;
+    font-size:12px;
+    color:var(--muted);
+    cursor:pointer;
+    padding:4px 8px;
+    border-radius:6px;
+  }
+  .card-actions button:hover{ background:var(--panel); color:var(--ink); }
+
+  .empty{
+    text-align:center;
+    color:var(--muted);
+    padding:60px 20px;
+    font-size:14px;
+  }
+
+  .modal-backdrop{
+    position:fixed; inset:0;
+    background:rgba(23,35,59,.45);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:10;
+  }
+  .modal-backdrop.open{ display:flex; }
+  .modal{
+    background:#fff;
+    border-radius:12px;
+    padding:24px;
+    width:100%;
+    max-width:420px;
+    max-height:90vh;
+    overflow-y:auto;
+  }
+  .modal h2{ font-family:'Fraunces', serif; font-size:18px; margin:0 0 16px; }
+  .modal label{ display:block; font-size:12px; color:var(--muted); margin:12px 0 4px; }
+  .modal label:first-of-type{ margin-top:0; }
+  .modal input, .modal select, .modal textarea{
+    width:100%;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:9px 10px;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:13.5px;
+  }
+  .modal textarea{ min-height:60px; resize:vertical; }
+  .modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+  }
+  .modal-actions button{
+    flex:1;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    font-weight:600;
+    font-size:13.5px;
+    cursor:pointer;
+  }
+  .btn-save{ background:var(--ink); color:#fff; }
+  .btn-cancel{ background:var(--panel); color:var(--ink); }
+  .btn-delete{ background:var(--red-light); color:var(--red); flex:0 0 auto; padding:10px 14px; }
+
+  .loading{ text-align:center; padding:40px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="82" fill="none" stroke="#17233B" stroke-width="5"/>
+      <circle cx="90" cy="90" r="74" fill="none" stroke="#17233B" stroke-width="1.5"/>
+      <text x="90" y="118" font-family="Fraunces" font-weight="600" font-size="80" text-anchor="middle" fill="#17233B">K</text>
+      <rect x="60" y="128" width="60" height="4" fill="#B8863A"/>
+    </svg>
+    <div>
+      <div class="brand-name">Akquise<span>Tracker</span></div>
+      <div class="brand-sub">Klarkontor — Kunden im Blick</div>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<main>
+  <div class="toolbar" id="toolbar">
+    <button class="add-btn" id="addBtn">+ Neuer Kontakt</button>
+  </div>
+  <div id="list" class="loading">Lädt…</div>
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <h2 id="modalTitle">Neuer Kontakt</h2>
+    <label>Name / Firma</label>
+    <input id="fName" placeholder="z. B. Schreinerei Huber">
+    <label>Kontakt (Telefon/E-Mail)</label>
+    <input id="fContact" placeholder="z. B. 0170 1234567">
+    <label>Status</label>
+    <select id="fStatus">
+      <option>Neu</option>
+      <option>Angeschrieben</option>
+      <option>Antwort</option>
+      <option>Termin</option>
+      <option>Kunde</option>
+      <option>Abgesagt</option>
+    </select>
+    <label>Notizen</label>
+    <textarea id="fNotes" placeholder="Was braucht die Person? Wie kennst du sie?"></textarea>
+    <label>Nächster Schritt am</label>
+    <input id="fFollowup" type="date">
+    <div class="modal-actions">
+      <button class="btn-delete" id="deleteBtn" style="display:none;">Löschen</button>
+      <button class="btn-cancel" id="cancelBtn">Abbrechen</button>
+      <button class="btn-save" id="saveBtn">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let contacts = [];
+let editingId = null;
+let activeFilter = 'Alle';
+const $ = id => document.getElementById(id);
+const STATUSES = ['Neu','Angeschrieben','Antwort','Termin','Kunde','Abgesagt'];
+
+function todayStr(){
+  return new Date().toISOString().slice(0,10);
+}
+
+async function loadContacts(){
+  try{
+    const raw = localStorage.getItem('klarkontor-contacts');
+    contacts = raw ? JSON.parse(raw) : [];
+  }catch(e){
+    contacts = [];
+  }
+  render();
+}
+
+async function saveContacts(){
+  try{
+    localStorage.setItem('klarkontor-contacts', JSON.stringify(contacts));
+  }catch(e){
+    console.error('Speichern fehlgeschlagen', e);
+  }
+}
+
+function openModal(contact){
+  editingId = contact ? contact.id : null;
+  $('modalTitle').textContent = contact ? 'Kontakt bearbeiten' : 'Neuer Kontakt';
+  $('fName').value = contact ? contact.name : '';
+  $('fContact').value = contact ? contact.contact : '';
+  $('fStatus').value = contact ? contact.status : 'Neu';
+  $('fNotes').value = contact ? contact.notes : '';
+  $('fFollowup').value = contact ? (contact.followup || '') : '';
+  $('deleteBtn').style.display = contact ? 'block' : 'none';
+  $('modalBackdrop').classList.add('open');
+}
+function closeModal(){ $('modalBackdrop').classList.remove('open'); }
+
+$('addBtn').addEventListener('click', () => openModal(null));
+$('cancelBtn').addEventListener('click', closeModal);
+
+$('saveBtn').addEventListener('click', async () => {
+  const name = $('fName').value.trim();
+  if(!name){ $('fName').focus(); return; }
+  const data = {
+    name,
+    contact: $('fContact').value.trim(),
+    status: $('fStatus').value,
+    notes: $('fNotes').value.trim(),
+    followup: $('fFollowup').value,
+  };
+  if(editingId){
+    const idx = contacts.findIndex(c => c.id === editingId);
+    contacts[idx] = { ...contacts[idx], ...data };
+  } else {
+    contacts.unshift({ id: 'c' + Date.now(), createdAt: todayStr(), ...data });
+  }
+  await saveContacts();
+  closeModal();
+  render();
+});
+
+$('deleteBtn').addEventListener('click', async () => {
+  contacts = contacts.filter(c => c.id !== editingId);
+  await saveContacts();
+  closeModal();
+  render();
+});
+
+function renderToolbarFilters(){
+  const tb = $('toolbar');
+  tb.querySelectorAll('.filter-chip').forEach(el => el.remove());
+  const counts = { Alle: contacts.length };
+  STATUSES.forEach(s => counts[s] = contacts.filter(c => c.status === s).length);
+  ['Alle', ...STATUSES].forEach(s => {
+    const chip = document.createElement('button');
+    chip.className = 'filter-chip' + (activeFilter === s ? ' active' : '');
+    chip.textContent = `${s} (${counts[s] || 0})`;
+    chip.addEventListener('click', () => { activeFilter = s; render(); });
+    tb.appendChild(chip);
+  });
+}
+
+function renderStats(){
+  const total = contacts.length;
+  const kunden = contacts.filter(c => c.status === 'Kunde').length;
+  const offen = contacts.filter(c => ['Neu','Angeschrieben','Antwort','Termin'].includes(c.status)).length;
+  $('stats').innerHTML = `
+    <div class="stat"><div class="stat-num">${total}</div><div class="stat-label">Kontakte</div></div>
+    <div class="stat"><div class="stat-num">${offen}</div><div class="stat-label">In Arbeit</div></div>
+    <div class="stat"><div class="stat-num">${kunden}</div><div class="stat-label">Kunden</div></div>
+  `;
+}
+
+function render(){
+  renderToolbarFilters();
+  renderStats();
+  const list = $('list');
+  const filtered = activeFilter === 'Alle' ? contacts : contacts.filter(c => c.status === activeFilter);
+
+  if(filtered.length === 0){
+    list.innerHTML = `<div class="empty">${contacts.length === 0 ? 'Noch keine Kontakte. Leg deinen ersten mit „+ Neuer Kontakt" an.' : 'Keine Kontakte in diesem Status.'}</div>`;
+    return;
+  }
+
+  const today = todayStr();
+  list.innerHTML = filtered.map(c => {
+    const due = c.followup && c.followup <= today && !['Kunde','Abgesagt'].includes(c.status);
+    return `
+    <div class="card" data-id="${c.id}">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${escapeHtml(c.name)}</div>
+          ${c.contact ? `<div class="card-contact">${escapeHtml(c.contact)}</div>` : ''}
+        </div>
+        <div class="status-badge status-${c.status}">${c.status}</div>
+      </div>
+      ${c.notes ? `<div class="card-notes">${escapeHtml(c.notes)}</div>` : ''}
+      <div class="card-meta">
+        <div class="followup ${due ? 'due' : ''}">${c.followup ? (due ? '⚠ fällig: ' : 'nächster Schritt: ') + formatDate(c.followup) : ''}</div>
+        <div class="card-actions">
+          <button class="edit-btn" data-id="${c.id}">Bearbeiten</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = contacts.find(x => x.id === btn.dataset.id);
+      openModal(c);
+    });
+  });
+}
+
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+function formatDate(d){
+  const [y,m,day] = d.split('-');
+  return `${day}.${m}.${y}`;
+}
+
+loadContacts();
+</script>
+
+</body>
+</html>
