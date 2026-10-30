@@ -203,9 +203,10 @@ test('Handy-Ansicht: untere Navigation, Editor mit Tabs, kein Seitwärts-Scrolle
   await page.locator('[data-act="demo"]').click(); await page.waitForSelector('.kpi');
   const nav = await page.locator('.side').boundingBox();
   assert.ok(nav.y > 700, 'Navigation unten');
-  for (const h of ['#/', '#/kontakte', '#/belege', '#/einstellungen/unternehmen']) {
+  for (const h of ['#/', '#/kontakte', '#/belege', '#/einstellungen/unternehmen', '#/einstellungen/steuer', '#/einstellungen/daten', '#/hilfe']) {
     await page.goto(base + '/app.html' + h); await page.waitForSelector('#view h1');
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    // clientWidth statt innerWidth: In der Mobil-Emulation wächst innerWidth mit überbreitem Inhalt mit
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     assert.ok(overflow <= 1, `${h}: horizontaler Überlauf ${overflow}px`);
   }
   await page.goto(base + '/app.html#/belege'); await page.locator('tbody tr').nth(1).click(); await page.waitForSelector('.mobile-tabs');
