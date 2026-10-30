@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Klarkontor">
+  <rect width="180" height="180" rx="36" fill="#17233B"/>
+  <circle cx="90" cy="90" r="68" fill="none" stroke="#faf8f3" stroke-width="5"/>
+  <circle cx="90" cy="90" r="60" fill="none" stroke="#faf8f3" stroke-width="1.5" opacity=".6"/>
+  <text x="90" y="116" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="76" text-anchor="middle" fill="#faf8f3">K</text>
+  <rect x="62" y="126" width="56" height="5" fill="#B8863A"/>
+</svg>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#17233B">
+<meta name="robots" content="noindex">
+<title>Klarkontor</title>
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<div class="shell" id="shell">
+  <aside class="side" aria-label="Hauptnavigation">
+    <a class="logo" href="#/" aria-label="Klarkontor – Übersicht"><img src="img/logo.png" alt="Klarkontor" width="168" height="45"></a>
+    <div class="new-wrap menu-wrap" style="padding:0 4px 10px">
+      <button class="btn primary" style="width:100%" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtn"></button>
+      <div class="menu left hidden" role="menu" id="newMenu"></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="grow"></div>
+    <div class="foot" id="sideFoot"></div>
+  </aside>
+  <div class="main">
+    <div class="topbar"><a href="#/" aria-label="Übersicht"><img src="img/logo.png" alt="Klarkontor" width="112" height="30"></a><div class="menu-wrap"><button class="btn primary sm" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtnM"></button><div class="menu hidden" role="menu" id="newMenuM"></div></div></div>
+    <div id="banners"></div>
+    <main id="view" class="page" tabindex="-1"></main>
+  </div>
+</div>
+<noscript><p style="padding:24px">Klarkontor benötigt JavaScript. Ihre Daten bleiben dabei ausschließlich in Ihrem Browser.</p></noscript>
+
+<script src="vendor/qrcode.js"></script>
+<script src="js/util.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/store.js"></script>
+<script src="js/domain.js"></script>
+<script src="js/fontmetrics.js"></script>
+<script src="js/epc.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/svg.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/docpdf.js"></script>
+<script src="js/einvoice.js"></script>
+<script src="js/export.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/contacts.js"></script>
+<script src="js/views/documents.js"></script>
+<script src="js/views/editor.js"></script>
+<script src="js/views/settings.js"></script>
+<script src="js/views/help.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
