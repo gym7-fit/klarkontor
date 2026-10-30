@@ -29,7 +29,7 @@
 
     const mkContact = (name, extra) => D.createContact(st, Object.assign({
       name, street: 'Musterstraße ' + (1 + name.length % 40), zip: '10' + String(100 + name.length * 7).slice(0, 3), city: 'Berlin',
-      email: name.toLowerCase().replace(/[^a-z]+/g, '') + '@beispiel.example', phone: '030 55' + String(name.length * 913).slice(0, 5),
+      email: name.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z]+/g, '') + '@beispiel.example', phone: '030 55' + String(name.length * 913).slice(0, 5),
     }, extra));
 
     const huber = mkContact('Schreinerei Huber GmbH', { person: 'Thomas Huber', salutation: 'Sehr geehrter Herr Huber', status: 'Kunde', value: 450000, source: 'Empfehlung', notes: 'Langjähriger Kunde, Relaunch und laufende Wartung.' });

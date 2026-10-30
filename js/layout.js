@@ -15,7 +15,7 @@
 
   const W = 210, H = 297, ML = 25, MR = 20, RIGHT = W - MR, CW = RIGHT - ML;
   const TOP2 = 32, BOTTOM = 266;
-  const INK = '#17233B', ACCENT = '#B8863A', MUTED = '#6E6656', LINE = '#DCD6C8', PANEL = '#F6F3EA';
+  const INK = '#141414', ACCENT = '#141414', MUTED = '#5E5C57', LINE = '#D5D2CA', PANEL = '#F2F1ED';
 
   const width = (s, font, size) => FM.width(s, font, size);
 

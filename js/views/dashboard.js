@@ -26,7 +26,7 @@
   const eurShort = c => Math.round(c / 100).toLocaleString('de-DE') + ' €';
 
   function chart(values, year) {
-    const W = 720, H = 210, L = 46, R = 8, T = 16, B = 26;
+    const W = 720, H = 210, L = 74, R = 8, T = 16, B = 26;
     const max = Math.max(...values, 1);
     const step = niceStep(max / 4);
     const top = Math.max(step * Math.ceil(max / step), step);
@@ -36,10 +36,11 @@
     for (let v = 0; v <= top + 1; v += step) g += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${eurShort(v)}</text>`;
     const bars = values.map((v, i) => {
       const x = L + i * bw + bw * 0.18, w = bw * 0.64, hh = Math.max(0, H - B - y(v));
-      return `<g><title>${U.MONTHS[i]} ${year}: ${U.eur(v)}</title>${v > 0 ? `<rect class="bar" x="${x.toFixed(1)}" y="${y(v).toFixed(1)}" width="${w.toFixed(1)}" height="${hh.toFixed(1)}" rx="3"/>` : ''}<text x="${(x + w / 2).toFixed(1)}" y="${H - 9}" text-anchor="middle">${U.MONTHS[i].slice(0, 3)}</text></g>`;
+      const cur = year === new Date().getFullYear() && i === new Date().getMonth() ? ' cur' : '';
+      return `<g><title>${U.MONTHS[i]} ${year}: ${U.eur(v)}</title>${v > 0 ? `<rect class="bar${cur}" x="${x.toFixed(1)}" y="${y(v).toFixed(1)}" width="${w.toFixed(1)}" height="${hh.toFixed(1)}"/>` : ''}<text x="${(x + w / 2).toFixed(1)}" y="${H - 9}" text-anchor="middle">${U.MONTHS[i].slice(0, 3)}</text></g>`;
     }).join('');
     const label = `Umsatz pro Monat ${year} (nach Zahlungseingang, netto): ` + values.map((v, i) => `${U.MONTHS[i]} ${U.eur(v)}`).join(', ');
-    return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${U.esc(label)}">${g}${bars}</svg>`;
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${U.esc(label)}">${g}${bars}<line class="base" x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}"/></svg>`;
   }
   function niceStep(x) {
     const p = Math.pow(10, Math.floor(Math.log10(Math.max(x, 1))));
@@ -97,11 +98,11 @@
           <div class="row"><button class="btn" data-new="quote">${ui.icon('file')} Angebot</button><button class="btn primary" data-new="invoice">${ui.icon('plus')} Rechnung</button></div></div>
         <div class="stack lg">
           ${welcome}
-          <div class="grid cols-4">
-            <div class="card kpi"><div class="l">Offene Forderungen</div><div class="v">${U.eur(rec.openSum)}</div><div class="d">${rec.open.length} ${U.plural(rec.open.length, 'Rechnung', 'Rechnungen')}</div></div>
-            <div class="card kpi ${rec.overdue.length ? 'bad' : ''}"><div class="l">Davon überfällig</div><div class="v">${U.eur(rec.overdueSum)}</div><div class="d">${rec.overdue.length ? `${rec.overdue.length} ${U.plural(rec.overdue.length, 'Rechnung', 'Rechnungen')} – bitte nachfassen` : 'Nichts überfällig'}</div></div>
-            <div class="card kpi"><div class="l">Umsatz ${year} (bezahlt, netto)</div><div class="v">${U.eur(rev.paidNet)}</div><div class="d">${U.eur(rev.billedNet)} berechnet</div></div>
-            <div class="card kpi"><div class="l">Pipeline</div><div class="v">${U.eur(pipeSum)}</div><div class="d">${pipeline.length} ${U.plural(pipeline.length, 'offener Kontakt', 'offene Kontakte')}</div></div>
+          <div class="kpis" role="group" aria-label="Kennzahlen">
+            <div class="kpi"><div class="l">Offene Forderungen</div><div class="v">${U.eur(rec.openSum)}</div><div class="d">${rec.open.length} ${U.plural(rec.open.length, 'Rechnung', 'Rechnungen')}</div></div>
+            <div class="kpi ${rec.overdue.length ? 'bad' : ''}"><div class="l">Davon überfällig</div><div class="v">${U.eur(rec.overdueSum)}</div><div class="d">${rec.overdue.length ? `${rec.overdue.length} ${U.plural(rec.overdue.length, 'Rechnung', 'Rechnungen')} – bitte nachfassen` : 'Nichts überfällig'}</div></div>
+            <div class="kpi"><div class="l">Umsatz ${year} (bezahlt, netto)</div><div class="v">${U.eur(rev.paidNet)}</div><div class="d">${U.eur(rev.billedNet)} berechnet</div></div>
+            <div class="kpi"><div class="l">Pipeline</div><div class="v">${U.eur(pipeSum)}</div><div class="d">${pipeline.length} ${U.plural(pipeline.length, 'offener Kontakt', 'offene Kontakte')}</div></div>
           </div>
           <div class="grid cols-2" style="align-items:start">
             <section class="card" aria-labelledby="todoT"><div class="card-head"><h2 id="todoT">Was jetzt zu tun ist</h2><span class="badge ${todos.length ? 'accent' : 'good'}">${todos.length || 'alles erledigt'}</span></div>

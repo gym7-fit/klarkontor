@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#17233B">
+<meta name="theme-color" content="#141414">
 <meta name="robots" content="noindex">
 <title>Klarkontor</title>
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
@@ -17,9 +17,9 @@
 <body>
 <div class="shell" id="shell">
   <aside class="side" aria-label="Hauptnavigation">
-    <a class="logo" href="#/" aria-label="Klarkontor – Übersicht"><img src="img/logo.png" alt="Klarkontor" width="168" height="45"></a>
-    <div class="new-wrap menu-wrap" style="padding:0 4px 10px">
-      <button class="btn primary" style="width:100%" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtn"></button>
+    <a class="logo" href="#/" aria-label="Klarkontor – Übersicht"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="3" stroke-linecap="square"/></svg><span class="wm">Klarkontor</span></a>
+    <div class="new-wrap menu-wrap">
+      <button class="btn primary" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtn"></button>
       <div class="menu left hidden" role="menu" id="newMenu"></div>
     </div>
     <nav class="nav" id="nav"></nav>
@@ -27,7 +27,7 @@
     <div class="foot" id="sideFoot"></div>
   </aside>
   <div class="main">
-    <div class="topbar"><a href="#/" aria-label="Übersicht"><img src="img/logo.png" alt="Klarkontor" width="112" height="30"></a><div class="menu-wrap"><button class="btn primary sm" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtnM"></button><div class="menu hidden" role="menu" id="newMenuM"></div></div></div>
+    <div class="topbar"><a class="logo" href="#/" aria-label="Klarkontor – Übersicht"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="3" stroke-linecap="square"/></svg><span class="wm">Klarkontor</span></a><div class="menu-wrap"><button class="btn primary sm" data-menu-toggle aria-haspopup="menu" aria-expanded="false" id="newBtnM"></button><div class="menu hidden" role="menu" id="newMenuM"></div></div></div>
     <div id="banners"></div>
     <main id="view" class="page" tabindex="-1"></main>
   </div>

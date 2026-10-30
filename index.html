@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Klarkontor – Angebote, Rechnungen und E-Rechnungen ohne Abo</title>
-<meta name="description" content="Vom ersten Kontakt bis zur bezahlten E-Rechnung: Kundenpipeline, Angebote, Rechnungen mit GiroCode, XRechnung und ZUGFeRD, Mahnwesen. Kostenlos, ohne Konto – Ihre Daten bleiben in Ihrem Browser.">
-<meta name="theme-color" content="#17233B">
+<title>Klarkontor – Angebot. Rechnung. Bezahlt.</title>
+<meta name="description" content="Kundenpipeline, Angebote, Rechnungen mit GiroCode, XRechnung und ZUGFeRD, Mahnwesen. Kostenlos und ohne Konto – Ihre Daten bleiben auf Ihrem Gerät.">
+<meta name="theme-color" content="#141414">
 <link rel="icon" href="img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -15,123 +15,152 @@
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-<header class="site">
+<header class="mast">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Klarkontor Startseite"><img src="img/logo.png" alt="Klarkontor – Verwaltung, die läuft" width="150" height="40"></a>
-    <nav class="top" aria-label="Seitennavigation">
-      <a href="#ablauf">Ablauf</a><a href="#funktionen">Funktionen</a><a href="#e-rechnung">E-Rechnung</a><a href="#faq">Fragen</a>
-      <a class="btn primary sm" href="app.html">App öffnen</a>
-    </nav>
+    <a class="logo" href="./" aria-label="Klarkontor – Startseite"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="3" stroke-linecap="square"/></svg><span>Klarkontor</span></a>
+    <nav aria-label="Seitennavigation"><a href="#ablauf">Ablauf</a><a href="#leistungen">Leistungen</a><a href="#e-rechnung">E-Rechnung</a><a href="#fragen">Fragen</a><a class="btn sm primary" href="app.html">App öffnen</a></nav>
   </div>
 </header>
+<div class="meta"><div class="wrap"><span>Vordruck KK-1 · Ausgabe 2026</span><span>Kostenlos · ohne Konto · ohne Cloud</span></div></div>
 
 <main id="inhalt">
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow">E-Rechnung-ready für 2027</span>
-        <h1>Vom ersten Kontakt bis zur bezahlten <span class="nowrap">E-Rechnung.</span></h1>
-        <p class="lead">Kundenpipeline, Angebote und Rechnungen für Kleinunternehmer und Freelancer – ohne Abo, ohne Konto, ohne Cloud. Ihre Daten bleiben in Ihrem Browser.</p>
-        <div class="cta">
-          <a class="btn primary" href="app.html">Kostenlos starten</a>
-          <a class="btn" href="app.html?demo=1">Mit Beispieldaten ansehen</a>
+        <p class="kicker">Für Kleinunternehmer und Freelancer</p>
+        <h1>Angebot.<br>Rechnung.<br><span class="paid">Bezahlt.</span></h1>
+        <p class="lead">Klarkontor begleitet Sie vom ersten Kontakt bis zum Zahlungseingang – mit E-Rechnung, GiroCode und Mahnwesen. Ihre Daten bleiben auf Ihrem Gerät.</p>
+        <div class="actions"><a class="btn primary" href="app.html">App öffnen →</a><a class="btn" href="app.html?demo=1">Mit Beispieldaten ansehen</a></div>
+        <p class="fine">Keine Registrierung. Keine Installation. Läuft auch offline.</p>
+      </div>
+      <figure class="slip" aria-label="Beispiel: ausgefüllter Überweisungsträger mit GiroCode">
+        <div class="slip-head"><strong>SEPA-Überweisung</strong><span>Muster</span></div>
+        <div class="slip-row"><span class="lb">Angaben zum Zahlungsempfänger: Name, Vorname/Firma</span><span class="comb n27" aria-hidden="true"><i>M</i><i>U</i><i>S</i><i>T</i><i>E</i><i>R</i><i></i><i>W</i><i>E</i><i>B</i><i>D</i><i>E</i><i>S</i><i>I</i><i>G</i><i>N</i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="slip-row"><span class="lb">IBAN</span><span class="comb n22" aria-hidden="true"><i>D</i><i>E</i><i>8</i><i>9</i><i>3</i><i>7</i><i>0</i><i>4</i><i>0</i><i>0</i><i>4</i><i>4</i><i>0</i><i>5</i><i>3</i><i>2</i><i>0</i><i>1</i><i>3</i><i>0</i><i>0</i><i>0</i></span></div>
+        <div class="slip-row two"><div><span class="lb">BIC</span><span class="comb n11" aria-hidden="true"><i>C</i><i>O</i><i>B</i><i>A</i><i>D</i><i>E</i><i>F</i><i>F</i><i>X</i><i>X</i><i>X</i></span></div><div><span class="lb">Betrag: Euro, Cent</span><span class="comb n12" aria-hidden="true"><i></i><i></i><i></i><i></i><i>2</i><i>.</i><i>7</i><i>3</i><i>6</i><i>,</i><i>0</i><i>0</i></span></div></div>
+        <div class="slip-row"><span class="lb">Verwendungszweck</span><span class="comb n27" aria-hidden="true"><i>R</i><i>E</i><i>-</i><i>2</i><i>0</i><i>2</i><i>6</i><i>-</i><i>0</i><i>0</i><i>3</i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="slip-foot"><svg viewBox="0 0 41 41" role="img" aria-label="GiroCode für 2.736,00 Euro an Muster Webdesign"><path d="M0 0h7v1h-7zM9 0h2v1h-2zM12 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM20 0h2v1h-2zM23 0h2v1h-2zM31 0h2v1h-2zM34 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM17 1h1v1h-1zM23 1h2v1h-2zM27 1h1v1h-1zM29 1h1v1h-1zM32 1h1v1h-1zM34 1h1v1h-1zM40 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM9 2h2v1h-2zM13 2h5v1h-5zM19 2h1v1h-1zM21 2h2v1h-2zM24 2h1v1h-1zM26 2h1v1h-1zM29 2h3v1h-3zM34 2h1v1h-1zM36 2h3v1h-3zM40 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h1v1h-1zM11 3h3v1h-3zM16 3h2v1h-2zM20 3h6v1h-6zM27 3h1v1h-1zM31 3h1v1h-1zM34 3h1v1h-1zM36 3h3v1h-3zM40 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM11 4h3v1h-3zM15 4h3v1h-3zM20 4h1v1h-1zM23 4h2v1h-2zM27 4h2v1h-2zM34 4h1v1h-1zM36 4h3v1h-3zM40 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM11 5h5v1h-5zM19 5h4v1h-4zM24 5h1v1h-1zM26 5h3v1h-3zM31 5h1v1h-1zM34 5h1v1h-1zM40 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM32 6h1v1h-1zM34 6h7v1h-7zM9 7h3v1h-3zM13 7h1v1h-1zM16 7h2v1h-2zM21 7h4v1h-4zM27 7h4v1h-4zM32 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM5 8h2v1h-2zM8 8h1v1h-1zM11 8h5v1h-5zM17 8h1v1h-1zM20 8h1v1h-1zM23 8h2v1h-2zM26 8h5v1h-5zM32 8h2v1h-2zM35 8h1v1h-1zM1 9h4v1h-4zM7 9h1v1h-1zM9 9h1v1h-1zM11 9h2v1h-2zM17 9h4v1h-4zM23 9h3v1h-3zM27 9h1v1h-1zM29 9h1v1h-1zM34 9h2v1h-2zM37 9h1v1h-1zM39 9h2v1h-2zM1 10h8v1h-8zM10 10h4v1h-4zM15 10h2v1h-2zM19 10h2v1h-2zM29 10h4v1h-4zM35 10h1v1h-1zM37 10h1v1h-1zM2 11h2v1h-2zM8 11h2v1h-2zM11 11h1v1h-1zM14 11h1v1h-1zM16 11h1v1h-1zM19 11h3v1h-3zM25 11h1v1h-1zM27 11h2v1h-2zM32 11h3v1h-3zM38 11h1v1h-1zM0 12h3v1h-3zM4 12h1v1h-1zM6 12h1v1h-1zM9 12h1v1h-1zM11 12h1v1h-1zM13 12h1v1h-1zM17 12h6v1h-6zM25 12h1v1h-1zM28 12h2v1h-2zM31 12h1v1h-1zM34 12h2v1h-2zM38 12h3v1h-3zM0 13h1v1h-1zM3 13h1v1h-1zM8 13h2v1h-2zM11 13h1v1h-1zM13 13h2v1h-2zM16 13h1v1h-1zM18 13h1v1h-1zM20 13h2v1h-2zM23 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM37 13h1v1h-1zM5 14h2v1h-2zM8 14h2v1h-2zM12 14h1v1h-1zM14 14h3v1h-3zM18 14h2v1h-2zM21 14h1v1h-1zM23 14h1v1h-1zM26 14h5v1h-5zM34 14h1v1h-1zM36 14h2v1h-2zM40 14h1v1h-1zM4 15h2v1h-2zM7 15h2v1h-2zM11 15h2v1h-2zM15 15h1v1h-1zM17 15h1v1h-1zM20 15h2v1h-2zM23 15h1v1h-1zM25 15h2v1h-2zM28 15h2v1h-2zM31 15h1v1h-1zM33 15h1v1h-1zM39 15h1v1h-1zM0 16h3v1h-3zM4 16h1v1h-1zM6 16h1v1h-1zM8 16h3v1h-3zM12 16h3v1h-3zM16 16h1v1h-1zM18 16h1v1h-1zM20 16h2v1h-2zM25 16h1v1h-1zM27 16h1v1h-1zM29 16h3v1h-3zM35 16h1v1h-1zM39 16h1v1h-1zM0 17h2v1h-2zM3 17h2v1h-2zM7 17h1v1h-1zM10 17h2v1h-2zM13 17h2v1h-2zM17 17h1v1h-1zM19 17h3v1h-3zM23 17h1v1h-1zM27 17h2v1h-2zM30 17h1v1h-1zM32 17h1v1h-1zM34 17h1v1h-1zM38 17h1v1h-1zM40 17h1v1h-1zM1 18h2v1h-2zM6 18h1v1h-1zM10 18h4v1h-4zM16 18h2v1h-2zM20 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM28 18h3v1h-3zM34 18h1v1h-1zM38 18h3v1h-3zM1 19h1v1h-1zM4 19h1v1h-1zM9 19h1v1h-1zM11 19h2v1h-2zM14 19h3v1h-3zM21 19h1v1h-1zM24 19h2v1h-2zM28 19h3v1h-3zM33 19h1v1h-1zM35 19h2v1h-2zM40 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM9 20h1v1h-1zM12 20h2v1h-2zM17 20h1v1h-1zM20 20h1v1h-1zM22 20h3v1h-3zM26 20h5v1h-5zM34 20h1v1h-1zM37 20h3v1h-3zM0 21h3v1h-3zM4 21h1v1h-1zM7 21h1v1h-1zM11 21h2v1h-2zM15 21h2v1h-2zM21 21h5v1h-5zM28 21h1v1h-1zM32 21h4v1h-4zM38 21h2v1h-2zM2 22h3v1h-3zM6 22h1v1h-1zM8 22h1v1h-1zM12 22h2v1h-2zM16 22h1v1h-1zM18 22h2v1h-2zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h1v1h-1zM28 22h4v1h-4zM36 22h1v1h-1zM38 22h2v1h-2zM1 23h1v1h-1zM4 23h1v1h-1zM8 23h1v1h-1zM11 23h4v1h-4zM16 23h1v1h-1zM21 23h2v1h-2zM24 23h2v1h-2zM33 23h2v1h-2zM37 23h4v1h-4zM0 24h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM6 24h2v1h-2zM11 24h1v1h-1zM13 24h2v1h-2zM18 24h1v1h-1zM24 24h1v1h-1zM32 24h1v1h-1zM34 24h2v1h-2zM37 24h1v1h-1zM1 25h1v1h-1zM3 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM15 25h3v1h-3zM20 25h1v1h-1zM22 25h4v1h-4zM27 25h1v1h-1zM29 25h2v1h-2zM35 25h1v1h-1zM39 25h2v1h-2zM0 26h1v1h-1zM3 26h1v1h-1zM5 26h4v1h-4zM13 26h1v1h-1zM15 26h1v1h-1zM17 26h2v1h-2zM22 26h5v1h-5zM29 26h1v1h-1zM33 26h2v1h-2zM36 26h5v1h-5zM0 27h1v1h-1zM2 27h1v1h-1zM4 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM15 27h1v1h-1zM17 27h1v1h-1zM20 27h3v1h-3zM25 27h1v1h-1zM29 27h1v1h-1zM33 27h2v1h-2zM39 27h2v1h-2zM0 28h1v1h-1zM2 28h1v1h-1zM5 28h7v1h-7zM14 28h2v1h-2zM17 28h3v1h-3zM21 28h1v1h-1zM24 28h3v1h-3zM28 28h2v1h-2zM31 28h1v1h-1zM37 28h2v1h-2zM1 29h2v1h-2zM4 29h2v1h-2zM7 29h1v1h-1zM9 29h3v1h-3zM13 29h2v1h-2zM17 29h4v1h-4zM22 29h1v1h-1zM24 29h4v1h-4zM32 29h4v1h-4zM37 29h2v1h-2zM40 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM6 30h1v1h-1zM8 30h3v1h-3zM14 30h1v1h-1zM17 30h2v1h-2zM21 30h1v1h-1zM23 30h4v1h-4zM30 30h1v1h-1zM34 30h1v1h-1zM36 30h2v1h-2zM40 30h1v1h-1zM5 31h1v1h-1zM7 31h2v1h-2zM14 31h1v1h-1zM16 31h2v1h-2zM21 31h2v1h-2zM24 31h1v1h-1zM27 31h3v1h-3zM32 31h3v1h-3zM37 31h1v1h-1zM39 31h2v1h-2zM0 32h1v1h-1zM2 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM12 32h6v1h-6zM20 32h3v1h-3zM25 32h1v1h-1zM28 32h1v1h-1zM30 32h9v1h-9zM40 32h1v1h-1zM8 33h4v1h-4zM13 33h6v1h-6zM22 33h1v1h-1zM25 33h3v1h-3zM30 33h1v1h-1zM32 33h1v1h-1zM36 33h2v1h-2zM39 33h1v1h-1zM0 34h7v1h-7zM9 34h2v1h-2zM14 34h1v1h-1zM18 34h5v1h-5zM24 34h3v1h-3zM29 34h1v1h-1zM32 34h1v1h-1zM34 34h1v1h-1zM36 34h4v1h-4zM0 35h1v1h-1zM6 35h1v1h-1zM8 35h1v1h-1zM10 35h2v1h-2zM13 35h2v1h-2zM18 35h3v1h-3zM23 35h1v1h-1zM25 35h1v1h-1zM27 35h1v1h-1zM29 35h1v1h-1zM31 35h2v1h-2zM36 35h5v1h-5zM0 36h1v1h-1zM2 36h3v1h-3zM6 36h1v1h-1zM9 36h4v1h-4zM14 36h3v1h-3zM18 36h1v1h-1zM24 36h1v1h-1zM26 36h1v1h-1zM32 36h6v1h-6zM0 37h1v1h-1zM2 37h3v1h-3zM6 37h1v1h-1zM8 37h1v1h-1zM16 37h1v1h-1zM18 37h2v1h-2zM21 37h6v1h-6zM29 37h1v1h-1zM33 37h3v1h-3zM40 37h1v1h-1zM0 38h1v1h-1zM2 38h3v1h-3zM6 38h1v1h-1zM12 38h3v1h-3zM18 38h1v1h-1zM20 38h2v1h-2zM23 38h4v1h-4zM30 38h1v1h-1zM33 38h1v1h-1zM35 38h2v1h-2zM38 38h3v1h-3zM0 39h1v1h-1zM6 39h1v1h-1zM9 39h1v1h-1zM11 39h1v1h-1zM13 39h3v1h-3zM17 39h1v1h-1zM21 39h1v1h-1zM25 39h6v1h-6zM33 39h1v1h-1zM35 39h1v1h-1zM37 39h1v1h-1zM39 39h1v1h-1zM0 40h7v1h-7zM8 40h1v1h-1zM11 40h1v1h-1zM14 40h1v1h-1zM16 40h1v1h-1zM19 40h2v1h-2zM22 40h4v1h-4zM32 40h1v1h-1zM35 40h2v1h-2zM39 40h1v1h-1z" fill="#141414"/></svg><p><strong>Oder einfach scannen.</strong>Statt 99 Kästchen von Hand: Ihr Kunde scannt den GiroCode auf der Rechnung mit seiner Banking-App.</p></div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="ablauf">
+    <div class="wrap">
+      <div class="sec-head"><span class="no">§ 1</span><div><h2>Der Ablauf</h2><p>Andere Programme fangen bei der Rechnung an. Klarkontor beginnt beim ersten Kontakt – und hört erst auf, wenn das Geld auf dem Konto ist.</p></div></div>
+      <table class="ledger">
+        <thead><tr><th>Nr.</th><th>Vorgang</th><th>Was Klarkontor erledigt</th><th class="r">Ergebnis</th></tr></thead>
+        <tbody>
+          <tr><td class="nr">01</td><td class="vg">Eine Anfrage kommt rein</td><td>Kontakt anlegen, Auftragswert schätzen, Wiedervorlage setzen. Die Übersicht erinnert Sie ans Nachfassen.</td><td class="res"><span class="stamp ink">Karteikarte</span></td></tr>
+          <tr><td class="nr">02</td><td class="vg">Sie schreiben ein Angebot</td><td>Positionen erfassen, Vorschau prüfen, festschreiben. Nummer und PDF sind sofort fertig.</td><td class="res"><span class="stamp">AN-2026-014</span></td></tr>
+          <tr><td class="nr">03</td><td class="vg">Der Auftrag kommt</td><td>Angebot per Klick in eine Rechnung umwandeln und als PDF mit GiroCode oder als E-Rechnung verschicken.</td><td class="res"><span class="stamp">RE-2026-031</span></td></tr>
+          <tr><td class="nr">04</td><td class="vg">Sie warten aufs Geld</td><td>Zahlung erfassen. Bleibt sie aus: Erinnerung, 1. und 2. Mahnung mit Zinsen und Pauschale.</td><td class="res"><span class="stamp green">Bezahlt</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec desk" id="leistungen">
+    <div class="wrap">
+      <div class="sec-head"><span class="no">§ 2</span><div><h2>Leistungs&shy;verzeichnis</h2><p>Was Sie bekommen – und was es kostet.</p></div></div>
+      <div class="invoice indent">
+        <div class="invoice-head"><h3>Rechnung</h3><dl><dt>Nr.</dt><dd>KK-2026-0</dd><dt>Empfänger</dt><dd>Sie</dd><dt>Zahlbar</dt><dd>nie</dd></dl></div>
+        <table class="ledger">
+          <thead><tr><th>Pos.</th><th>Leistung</th><th class="r hide-s">Menge</th><th class="r">Gesamt</th></tr></thead>
+          <tbody>
+            <tr><td class="nr">1</td><td class="desc"><strong>Kunden-Pipeline</strong><span>Kontakte als Karteikarten von „Neu“ bis „Kunde“, Verlauf, Auftragswert und Wiedervorlagen.</span></td><td class="r hide-s">1 psch.</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">2</td><td class="desc"><strong>Angebote und Rechnungen</strong><span>Echte PDFs nach DIN 5008 mit Ihrem Logo, Rabatt, 19 % / 7 % oder § 19 UStG, lückenlose Nummern.</span></td><td class="r hide-s">unbegrenzt</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">3</td><td class="desc"><strong>E-Rechnung</strong><span>XRechnung 3.0 und ZUGFeRD – geprüft gegen die europäische Norm EN 16931, mit Pflichtfeld-Check.</span></td><td class="r hide-s">unbegrenzt</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">4</td><td class="desc"><strong>GiroCode</strong><span>Der QR-Code für die Banking-App auf jeder Rechnung. Betrag und Verwendungszweck sind schon drin.</span></td><td class="r hide-s">je Rechnung</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">5</td><td class="desc"><strong>Zahlungen und Mahnwesen</strong><span>Offene Posten im Blick, Zahlungserinnerung, 1. und 2. Mahnung mit Verzugszinsen und Pauschale.</span></td><td class="r hide-s">1 psch.</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">6</td><td class="desc"><strong>Kleinunternehmer-Grenze</strong><span>Zeigt rechtzeitig, wie nah Sie den Umsatzgrenzen von 25.000 € und 100.000 € kommen.</span></td><td class="r hide-s">1 psch.</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">7</td><td class="desc"><strong>Export für die Steuerberatung</strong><span>Einnahmen und Rechnungsübersicht als CSV – direkt für Excel, LibreOffice oder die EÜR.</span></td><td class="r hide-s">je Jahr</td><td class="r">0,00 €</td></tr>
+            <tr><td class="nr">8</td><td class="desc"><strong>Offline-Betrieb und Sicherung</strong><span>Läuft ohne Internet und ohne Konto. Alle Daten als eine Sicherungsdatei.</span></td><td class="r hide-s">1 psch.</td><td class="r">0,00 €</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3">Zwischensumme</td><td class="r">0,00 €</td></tr>
+            <tr><td colspan="3">Monatliche Abo-Gebühr</td><td class="r">entfällt</td></tr>
+            <tr class="total"><td colspan="3">Gesamtbetrag</td><td class="r"><span>0,00 €</span></td></tr>
+          </tfoot>
+        </table>
+        <p class="note">Gemäß gesundem Menschenverstand wird für das Schreiben von Rechnungen keine Monatsgebühr berechnet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="anlagen">
+    <div class="wrap">
+      <div class="sec-head"><span class="no">§ 3</span><div><h2>Anlagen</h2><p>So sieht Klarkontor aus – echte Bildschirmfotos mit Beispieldaten.</p></div></div>
+      <div class="figs">
+        <figure class="fig"><img src="img/screen-dashboard.jpg" alt="Übersicht mit Kennzahlen, Aufgaben und Kleinunternehmer-Grenze" width="1280" height="800" loading="lazy"><figcaption><b>Anlage A</b> Übersicht: offene Posten, Aufgaben, Umsatz</figcaption></figure>
+        <figure class="fig"><img src="img/screen-beleg.jpg" alt="Rechnungs-Editor mit Formularfeldern und Live-Vorschau" width="1280" height="800" loading="lazy"><figcaption><b>Anlage B</b> Rechnung bearbeiten, mit Live-Vorschau</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="e-rechnung">
+    <div class="wrap">
+      <div class="sec-head"><span class="no">§ 4</span><div><h2>E-Rechnung: die Fristen</h2><p>Rechnungen zwischen Unternehmen werden in Deutschland schrittweise elektronisch. Klarkontor erzeugt beide gängigen Formate.</p></div></div>
+      <div class="split indent">
+        <table class="ledger">
+          <thead><tr><th>Stichtag</th><th>Was gilt</th></tr></thead>
+          <tbody>
+            <tr><td class="nr nowrap">01.01.2025</td><td>Alle Unternehmen müssen E-Rechnungen <strong>empfangen</strong> können.</td></tr>
+            <tr><td class="nr nowrap">01.01.2027</td><td>Unternehmen mit mehr als 800.000 € Vorjahresumsatz müssen E-Rechnungen <strong>ausstellen</strong>.</td></tr>
+            <tr><td class="nr nowrap">01.01.2028</td><td>Die Pflicht gilt für alle Rechnungen zwischen inländischen Unternehmen.</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <ul class="boxes">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="2.6" stroke-linecap="square"/></svg><div><strong>XRechnung 3.0</strong><span>Reines XML – Standard bei Behörden, lesbar für die meisten Buchhaltungsprogramme.</span></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="2.6" stroke-linecap="square"/></svg><div><strong>ZUGFeRD / Factur-X</strong><span>PDF für Menschen und XML für Maschinen in einer Datei.</span></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 12.5 L10.5 16.5 L18 7" fill="none" stroke="#D2381C" stroke-width="2.6" stroke-linecap="square"/></svg><div><strong>Pflichtfeld-Prüfung</strong><span>Fehlt etwas, sagt Klarkontor vor dem Export, was.</span></div></li>
+          </ul>
+          <p class="aside-note">Kleinunternehmer sind vom Ausstellen ausgenommen. Viele Geschäftskunden wünschen sich E-Rechnungen trotzdem. Keine Rechtsberatung – bitte prüfen Sie Ihre Pflichten mit Ihrer Steuerberatung.</p>
         </div>
-        <p class="fine">Keine Registrierung · keine Installation · funktioniert auch offline</p>
-      </div>
-      <div class="shot" aria-hidden="false">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <img src="img/screen-dashboard.jpg" alt="Klarkontor-Übersicht mit offenen Forderungen, Aufgaben und Kleinunternehmer-Grenze" width="1280" height="800">
       </div>
     </div>
   </section>
 
-  <div class="strip">
-    <ul class="wrap">
-      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>XRechnung &amp; ZUGFeRD</li>
-      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>GiroCode auf jeder Rechnung</li>
-      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Daten bleiben bei Ihnen</li>
-      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Kostenlos, ohne Abo</li>
-    </ul>
-  </div>
-
-  <section class="block" id="ablauf">
+  <section class="sec desk" id="datenschutz">
     <div class="wrap">
-      <div class="center"><h2>Ein Ablauf statt fünf Tools</h2><p>Andere Programme fangen bei der Rechnung an. Klarkontor beginnt beim ersten Kontakt – und hört erst auf, wenn das Geld da ist.</p></div>
-      <ol class="flow">
-        <li><h3>Kontakt festhalten</h3><p>Interessenten im Pipeline-Board von „Neu“ bis „Kunde“ schieben. Wiedervorlagen erinnern ans Nachfassen.</p></li>
-        <li><h3>Angebot schicken</h3><p>Direkt aus dem Kontakt, mit Live-Vorschau. Festschreiben vergibt die Nummer, das PDF ist sofort fertig.</p></li>
-        <li><h3>Rechnung stellen</h3><p>Angenommenes Angebot per Klick in eine Rechnung umwandeln – als PDF mit GiroCode oder als E-Rechnung.</p></li>
-        <li><h3>Bezahlt</h3><p>Zahlungen erfassen, Überfälliges sehen, Erinnerung und Mahnung mit Zinsen und Pauschale erzeugen.</p></li>
-      </ol>
+      <div class="sec-head"><span class="no">§ 5</span><div><h2>Vermerk zum Datenschutz</h2></div></div>
+      <div class="vermerk indent">
+        <div>
+          <h3>Ihre Daten verlassen Ihr Gerät nicht.</h3>
+          <ol>
+            <li>Kein Konto, kein Server: Kontakte und Rechnungen liegen nur im Speicher Ihres Browsers.</li>
+            <li>Keine Tracker, keine Cookies, keine Schriften oder Skripte von fremden Servern.</li>
+            <li>Einmal geöffnet, funktioniert Klarkontor auch ohne Internet.</li>
+          </ol>
+          <p class="honest"><strong>Ehrlich gesagt:</strong> Löschen Sie Ihre Browserdaten oder wechseln Sie das Gerät, sind die Daten weg. Deshalb erinnert Klarkontor regelmäßig an eine Sicherung – eine Datei, die Sie überall wieder einspielen können.</p>
+        </div>
+        <div class="seal"><span class="stamp big">Bleibt lokal</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="block alt" id="funktionen">
+  <section class="sec" id="fragen">
     <div class="wrap">
-      <div class="center"><h2>Alles, was ein kleiner Betrieb wirklich braucht</h2><p>Nicht mehr, nicht weniger. Gemacht für Kleinunternehmer nach § 19 UStG – Regelbesteuerung mit 19 % und 7 % geht genauso.</p></div>
-      <div class="feats">
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Angebote &amp; Rechnungen</h3><p>Echte PDFs nach DIN 5008 mit Ihrem Logo, Rabatten, mehreren Steuersätzen und lückenlosen Nummernkreisen.</p></div>
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>E-Rechnung inklusive</h3><p>XRechnung 3.0 als XML und ZUGFeRD-PDF – geprüft gegen die europäische Norm EN 16931, mit Pflichtfeld-Check vor dem Export.</p></div>
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3z"/></svg></div><h3>GiroCode</h3><p>Ein QR-Code auf jeder Rechnung: Ihre Kunden scannen ihn mit der Banking-App – Betrag und Verwendungszweck sind schon ausgefüllt.</p></div>
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.4c2.2.7 3.5 2.6 3.5 5.6"/></svg></div><h3>Kunden-Pipeline</h3><p>Kontakte, Verlauf, Auftragswert und nächste Schritte. Die Übersicht sagt Ihnen jeden Morgen, wen Sie anrufen sollten.</p></div>
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6 16V9M11 16V5M16 16v-5M21 16V8"/></svg></div><h3>Kleinunternehmer-Grenze</h3><p>Behalten Sie die Umsatzgrenzen von 25.000 € und 100.000 € im Blick, bevor es teuer wird.</p></div>
-        <div class="feat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg></div><h3>Export für die Steuerberatung</h3><p>Einnahmen und Rechnungsübersicht als CSV – direkt in Excel, LibreOffice oder für die EÜR.</p></div>
-      </div>
+      <div class="sec-head"><span class="no">§ 6</span><div><h2>Anmerkungen</h2></div></div>
+      <dl class="notes indent">
+        <div><dt><span>Anm. 1</span>Was kostet Klarkontor?</dt><dd>Nichts. Kein Abo, keine Registrierung, keine versteckte Bezahlstufe.</dd></div>
+        <div><dt><span>Anm. 2</span>Wo liegen meine Daten?</dt><dd>Nur im lokalen Speicher Ihres Browsers. Über „Sicherung herunterladen“ bekommen Sie jederzeit eine Datei mit allem.</dd></div>
+        <div><dt><span>Anm. 3</span>Geht das auf mehreren Geräten?</dt><dd>Ja, über die Sicherungsdatei: auf dem einen Gerät herunterladen, auf dem anderen einspielen. Eine Synchronisierung gibt es bewusst nicht – dafür bräuchte es einen Server.</dd></div>
+        <div><dt><span>Anm. 4</span>Sind die Rechnungen rechtssicher?</dt><dd>Klarkontor prüft die wichtigsten Pflichtangaben, vergibt fortlaufende Nummern und sperrt ausgestellte Rechnungen. Eine Steuerberatung ersetzt es nicht – lassen Sie Ihre Vorlagen einmal prüfen.</dd></div>
+        <div><dt><span>Anm. 5</span>Brauche ich als Kleinunternehmer E-Rechnungen?</dt><dd>Empfangen müssen Sie sie können, ausstellen müssen Sie sie nicht. Wünscht ein Kunde eine, erzeugt Klarkontor sie mit einem Klick.</dd></div>
+        <div><dt><span>Anm. 6</span>Was kann Klarkontor nicht?</dt><dd>Es ist keine Buchhaltung. Reverse-Charge, Auslandsrechnungen, Skonto, Abschlagsrechnungen und Bankanbindung fehlen.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="block" id="e-rechnung">
-    <div class="wrap split">
-      <div>
-        <h2>Die E-Rechnung kommt. Sie sind vorbereitet.</h2>
-        <p>Rechnungen zwischen Unternehmen werden in Deutschland schrittweise elektronisch. Klarkontor erzeugt beide gängigen Formate – Sie entscheiden je Kunde.</p>
-        <ul class="timeline">
-          <li><strong>Seit 2025</strong><span>Alle Unternehmen müssen E-Rechnungen empfangen können.</span></li>
-          <li><strong>Ab 2027</strong><span>Unternehmen mit mehr als 800.000 € Vorjahresumsatz müssen E-Rechnungen ausstellen.</span></li>
-          <li><strong>Ab 2028</strong><span>Die Pflicht gilt für alle Rechnungen zwischen inländischen Unternehmen.</span></li>
-        </ul>
-        <p class="note">Kleinunternehmer sind vom Ausstellen ausgenommen – viele Geschäftskunden wünschen sich E-Rechnungen trotzdem, weil ihre Buchhaltung sie automatisch verarbeitet. Keine Rechtsberatung; bitte prüfen Sie Ihre Pflichten mit Ihrer Steuerberatung.</p>
-      </div>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/screen-beleg.jpg" alt="Beleg-Editor mit festgeschriebener Rechnung, Zahlungen und Live-Vorschau" width="1280" height="800" loading="lazy"></div>
-    </div>
-  </section>
-
-  <section class="block alt" id="datenschutz">
-    <div class="wrap split">
-      <div>
-        <h2>Ihre Daten gehören Ihnen.</h2>
-        <ul class="checks">
-          <li><strong>Kein Konto, kein Server:</strong> Kontakte und Rechnungen werden nur im Speicher Ihres Browsers abgelegt.</li>
-          <li><strong>Keine Tracker, keine Cookies:</strong> Auch Schriften und Bilder werden nicht von Dritten geladen.</li>
-          <li><strong>Offline nutzbar:</strong> Einmal geöffnet, funktioniert Klarkontor auch ohne Internet und lässt sich wie eine App installieren.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Ehrlich gesagt</h3>
-        <p>„Nur im Browser“ heißt auch: Löschen Sie Ihre Browserdaten oder wechseln Sie das Gerät, sind die Daten weg. Klarkontor erinnert Sie deshalb regelmäßig an eine Sicherung – eine einzige Datei, die Sie auf jedem Gerät wieder einspielen können.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="faq">
+  <section class="sign">
     <div class="wrap">
-      <div class="center"><h2>Häufige Fragen</h2></div>
-      <div class="faq">
-        <details><summary>Was kostet Klarkontor?</summary><p>Nichts. Es gibt kein Abo und keine Registrierung.</p></details>
-        <details><summary>Wo werden meine Daten gespeichert?</summary><p>Ausschließlich im lokalen Speicher Ihres Browsers auf Ihrem Gerät. Über „Sicherung herunterladen“ erhalten Sie jederzeit eine Datei mit allen Daten.</p></details>
-        <details><summary>Kann ich auf mehreren Geräten arbeiten?</summary><p>Ja, über die Sicherungsdatei: auf Gerät A herunterladen, auf Gerät B einspielen. Eine automatische Synchronisierung gibt es bewusst nicht, weil dafür ein Server nötig wäre.</p></details>
-        <details><summary>Sind die Rechnungen rechtssicher?</summary><p>Klarkontor prüft vor dem Festschreiben die wichtigsten Pflichtangaben, vergibt fortlaufende Nummern und sperrt ausgestellte Rechnungen gegen Änderungen. Es ersetzt aber keine Steuerberatung – lassen Sie Ihre Vorlagen einmal prüfen.</p></details>
-        <details><summary>Brauche ich als Kleinunternehmer E-Rechnungen?</summary><p>Empfangen müssen Sie sie können, ausstellen müssen Sie sie als Kleinunternehmer nicht. Wenn Kunden sie wünschen, erzeugt Klarkontor sie mit einem Klick.</p></details>
-        <details><summary>Was ist nicht enthalten?</summary><p>Klarkontor ist keine Buchhaltung. Nicht unterstützt werden u. a. Reverse-Charge, Auslandsrechnungen, Skonto, Abschlagsrechnungen und Bankanbindung.</p></details>
+      <h2>Bereit? Dann hier unterschreiben.</h2>
+      <div class="sign-grid">
+        <div><div class="sign-line">Überall, heute</div><div class="sign-cap">Ort, Datum</div></div>
+        <div><div class="sign-line"></div><div class="sign-cap">Unterschrift – nicht nötig. Kein Konto, kein Vertrag.</div></div>
+        <a class="btn primary" href="app.html">App öffnen →</a>
       </div>
-    </div>
-  </section>
-
-  <section class="block no-top">
-    <div class="wrap final">
-      <h2>In fünf Minuten zur ersten Rechnung.</h2>
-      <p>Firmendaten eintragen, Kunde anlegen, Rechnung schreiben. Fertig.</p>
-      <div class="cta centered"><a class="btn" href="app.html">Jetzt kostenlos starten</a></div>
     </div>
   </section>
 </main>
@@ -139,7 +168,7 @@
 <footer class="site">
   <div class="wrap">
     <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="app.html#/hilfe">Hilfe</a></div>
-    <div>Klarkontor – Verwaltung, die läuft</div>
+    <div>Klarkontor · Vordruck KK-1</div>
   </div>
 </footer>
 </body>

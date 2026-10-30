@@ -20,6 +20,10 @@ Klarkontor ist eine kostenlose Web-App für Kleinunternehmer und Freelancer in D
 | **Daten** | Sicherung/Wiederherstellung (JSON), Backup-Erinnerung, Beispieldaten, Migration aus dem alten Akquise-Tracker |
 | **Technik** | Offline-fähig (PWA, installierbar), Dark Mode, Handy-Ansicht, strenge CSP, keine externen Ressourcen |
 
+## Gestaltung
+
+Das Designsystem heißt **„Vordruck“**: Klarkontor sieht aus wie ein gut gesetztes deutsches Formular. Formularfelder mit Beschriftung im Kästchen, Haarlinien, Feldnummern, Status als Stempel, Kontakte als Karteikarten, Beträge in Monospace mit doppelt unterstrichener Summe. Farben: Druckerschwarz, Formularrot (wie der SEPA-Überweisungsträger), Stempelblau. Schrift: Barlow / Barlow Condensed, Zahlen in IBM Plex Mono. Keine Rundungen, keine weichen Schatten. Die erzeugten Rechnungs-PDFs bleiben bewusst neutral (Schwarz/Grau), weil sie die Marke der Nutzerin bzw. des Nutzers tragen.
+
 ## Starten
 
 Es gibt keinen Build-Schritt.
@@ -59,7 +63,7 @@ Keine Steuer- oder Rechtsberatung und keine Buchhaltung. Nicht unterstützt: Rev
 ```
 index.html            Startseite (ohne JavaScript)
 app.html              App (Hash-Routing: #/, #/kontakte, #/belege, #/beleg/:id, #/einstellungen/:tab, #/hilfe)
-css/                  fonts.css, app.css (Design-System, Dark Mode), site.css (Startseite)
+css/                  fonts.css, app.css (Designsystem „Vordruck“, Dark Mode), site.css (Startseite)
 js/util.js            Geld (ganze Cent), Datum, HTML-Escaping (html``-Template), IBAN
 js/calc.js            Beträge, USt-Gruppen, Rabatt, Nummernkreise, Belegstatus, Mahnberechnung
 js/store.js           localStorage, Schema v2, Normalisierung, Migration, Import/Export
@@ -75,7 +79,7 @@ js/demo.js            Beispieldaten
 js/ui.js, js/app.js   UI-Helfer, Router, Navigation
 js/views/*.js         Ansichten
 vendor/qrcode.js      QR-Code-Generator (Kazuhiko Arase, MIT)
-fonts/                Fraunces, IBM Plex Sans/Mono (SIL Open Font License)
+fonts/                Barlow, Barlow Condensed, IBM Plex Mono (SIL Open Font License)
 sw.js, manifest       Offline-Betrieb / Installation
 ```
 

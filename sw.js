@@ -1,5 +1,5 @@
 /* Klarkontor – Service Worker: App läuft nach dem ersten Laden offline. Bei Änderungen VERSION erhöhen. */
-const VERSION = 'klarkontor-v2.0.0';
+const VERSION = 'klarkontor-v2.1.0';
 const ASSETS = [
   'index.html', 'app.html', 'impressum.html', 'datenschutz.html', 'manifest.webmanifest',
   'css/fonts.css', 'css/app.css', 'css/site.css',
@@ -7,9 +7,9 @@ const ASSETS = [
   'js/pdf.js', 'js/docpdf.js', 'js/einvoice.js', 'js/export.js', 'js/demo.js', 'js/ui.js', 'js/app.js',
   'js/views/dashboard.js', 'js/views/contacts.js', 'js/views/documents.js', 'js/views/editor.js', 'js/views/settings.js', 'js/views/help.js',
   'vendor/qrcode.js',
-  'img/logo.png', 'img/icon.svg', 'img/icon-192.png', 'img/icon-512.png',
-  'fonts/fraunces-latin-600-normal.woff2', 'fonts/fraunces-latin-700-normal.woff2',
-  'fonts/ibm-plex-sans-latin-400-normal.woff2', 'fonts/ibm-plex-sans-latin-500-normal.woff2', 'fonts/ibm-plex-sans-latin-600-normal.woff2', 'fonts/ibm-plex-sans-latin-700-normal.woff2',
+  'img/icon.svg', 'img/icon-192.png', 'img/icon-512.png',
+  'fonts/barlow-latin-400-normal.woff2', 'fonts/barlow-latin-500-normal.woff2', 'fonts/barlow-latin-600-normal.woff2', 'fonts/barlow-latin-700-normal.woff2',
+  'fonts/barlow-condensed-latin-600-normal.woff2', 'fonts/barlow-condensed-latin-700-normal.woff2',
   'fonts/ibm-plex-mono-latin-400-normal.woff2', 'fonts/ibm-plex-mono-latin-500-normal.woff2',
 ];
 

@@ -36,10 +36,10 @@
   function renderNav(activeId) {
     const c = counts();
     const badge = { belege: c.overdue, kontakte: c.followups };
-    $('nav').innerHTML = ROUTES.filter(r => r.label).map(r => {
+    $('nav').innerHTML = ROUTES.filter(r => r.label).map((r, i) => {
       const n = badge[r.id] || 0;
       const on = (r.id === activeId) ? ' aria-current="page"' : '';
-      return `<a href="${r.href}"${on}>${ui.icon(r.icon)}<span>${r.label}</span>${n ? `<span class="count" title="${r.id === 'belege' ? 'Überfällige Rechnungen' : 'Fällige Wiedervorlagen'}">${n}</span>` : ''}</a>`;
+      return `<a href="${r.href}"${on}><span class="no" aria-hidden="true">0${i + 1}</span><span>${r.label}</span>${n ? `<span class="count" title="${r.id === 'belege' ? 'Überfällige Rechnungen' : 'Fällige Wiedervorlagen'}">${n}</span>` : ''}</a>`;
     }).join('');
   }
 
@@ -72,7 +72,7 @@
         out.push(html`<div class="banner"><span>${ui.icon('shield', 'sm')} Ihre Daten liegen nur in diesem Browser. Eine Sicherung ${days == null ? 'wurde noch nie erstellt' : `ist ${days} Tage alt`} – bitte jetzt sichern.</span><button class="btn sm" data-act="backup">Sicherung herunterladen</button></div>`);
       }
     }
-    if (m.demo) out.push(html`<div class="banner" style="background:var(--blue-soft);color:var(--blue)"><span>${ui.icon('eye', 'sm')} Sie sehen <strong>Beispieldaten</strong>. Zum Loslegen mit eigenen Daten:</span><button class="btn sm" data-act="clear-demo">Beispieldaten entfernen</button></div>`);
+    if (m.demo) out.push(html`<div class="banner demo"><span>${ui.icon('eye', 'sm')} Sie sehen <strong>Beispieldaten</strong>. Zum Loslegen mit eigenen Daten:</span><button class="btn sm" data-act="clear-demo">Beispieldaten entfernen</button></div>`);
     $('banners').innerHTML = out.join('');
   }
 

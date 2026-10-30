@@ -241,6 +241,22 @@ test('Barrierefreiheit (axe-core): keine schweren Verstöße in den Hauptansicht
     const res = await page.evaluate(() => axe.run(document, { runOnly: ['wcag2a', 'wcag2aa'] }));
     for (const x of res.violations.filter(x => ['serious', 'critical'].includes(x.impact))) bad.push(`${v}: ${x.id} (${x.impact}) – ${x.nodes.slice(0, 2).map(n => n.target.join(' ')).join(' | ')}`);
   }
+  for (const v of ['index.html', 'impressum.html', 'datenschutz.html']) {
+    await page.goto(base + '/' + v);
+    await page.addScriptTag({ path: require.resolve('axe-core/axe.min.js') });
+    const res = await page.evaluate(() => axe.run(document, { runOnly: ['wcag2a', 'wcag2aa'] }));
+    for (const x of res.violations.filter(x => ['serious', 'critical'].includes(x.impact))) bad.push(`${v}: ${x.id} (${x.impact}) – ${x.nodes.slice(0, 2).map(n => n.target.join(' ')).join(' | ')}`);
+  }
   await ctx.close();
+  // dieselbe Prüfung im dunklen Design
+  const dctx = await browser.newContext({ viewport: { width: 1360, height: 900 }, locale: 'de-DE', bypassCSP: true, colorScheme: 'dark' });
+  const dp = await dctx.newPage();
+  for (const v of ['/app.html?demo=1', '/app.html#/belege', '/app.html#/beleg/' + doc, '/index.html']) {
+    await dp.goto(base + v); await dp.waitForLoadState('load'); await dp.waitForTimeout(300);
+    await dp.addScriptTag({ path: require.resolve('axe-core/axe.min.js') });
+    const res = await dp.evaluate(() => axe.run(document, { runOnly: ['wcag2a', 'wcag2aa'] }));
+    for (const x of res.violations.filter(x => ['serious', 'critical'].includes(x.impact))) bad.push(`dunkel ${v}: ${x.id} (${x.impact}) – ${x.nodes.slice(0, 2).map(n => n.target.join(' ')).join(' | ')}`);
+  }
+  await dctx.close();
   assert.deepEqual(bad, [], bad.join('\n'));
 });
